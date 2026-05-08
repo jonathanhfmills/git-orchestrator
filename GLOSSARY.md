@@ -21,8 +21,12 @@ A prefix on each line item in the Daily Log that classifies the type of change. 
 _Avoid_: label, type, category
 
 ## ADR
-An architectural decision record in `docs/adr/`. Records hard-to-reverse, surprising decisions at the orchestrator level only.
+An architectural decision record in `docs/adr/`. Records hard-to-reverse, surprising decisions at the orchestrator level only. Each ADR is immutable — if a decision changes, write a new ADR that supersedes the old one. Format: Status → Context → Decision → Considered Options → Consequences.
 _Avoid_: design doc, RFC (unless the project adopts those explicitly)
+
+## Architecture Document
+`ARCHITECTURE.md` at the repo root. Living description of the orchestrator's current structure, project layout, commit flow, and ADR index. Updated when structure changes (not when decisions change — that belongs in a new ADR).
+_Avoid_: system overview, design doc
 
 ## Sub-submodule
 A nested git submodule inside a Project. Changes require a branch and a PR into `main`; never commit directly to its `main`.

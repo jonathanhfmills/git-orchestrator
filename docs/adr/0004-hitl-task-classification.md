@@ -1,6 +1,10 @@
 # Standard HOOTL/HITLFE/HIC task classification for AI agents
 
-AI agents operating in the orchestrator classify every task node as `[HOOTL]`, `[HITLFE]`, or `[HIC]` before acting. This governs when an agent proceeds autonomously versus pausing for human input.
+## Status
+Accepted
+
+## Context
+AI agents operating in the orchestrator must decide when to proceed autonomously, when to pause for human approval, and when to surface a task and wait entirely. Without a shared classification system, agents either over-interrupt (training the human to click through without reading) or under-interrupt (missing high-stakes decisions mid-flight).
 
 ## Decision
 
@@ -12,7 +16,7 @@ Three-tier classification:
 
 Agents follow Prepare-Then-Prompt: no asking permission before acting on `[HOOTL]` tasks. Multiple `[HITLFE]` and `[HIC]` items are batched into a single daily briefing rather than scattered interrupts.
 
-## Considered options
+## Considered Options
 
 - **Interrupt-on-uncertainty** — ask the human whenever confidence drops below a threshold, without doing prep work first. Rejected: creates constant low-signal interrupts and shifts cognitive load onto the human before they have enough context to decide.
 - **Fully autonomous with human review after** — agent completes everything, human reviews in post. Rejected: too late to catch high-stakes or hard-to-reverse actions mid-flight; removes meaningful human control over consequential steps.
@@ -20,6 +24,6 @@ Agents follow Prepare-Then-Prompt: no asking permission before acting on `[HOOTL
 
 ## Consequences
 
-- Agents must tag each task node at planning time; ambiguous tasks should default to `[HITLFE]` rather than `[HOOTL]`.
-- The daily briefing pattern requires that agents track which tasks pended human input across a session and surface them together at natural stopping points.
+- Agents must tag each task node at planning time; ambiguous tasks default to `[HITLFE]` rather than `[HOOTL]`.
+- The daily briefing pattern requires agents to track which tasks pended human input across a session and surface them together at natural stopping points.
 - This classification is an orchestrator-level convention; project submodules may adopt it internally but are not required to.

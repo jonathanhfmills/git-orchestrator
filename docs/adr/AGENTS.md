@@ -18,12 +18,35 @@ Architectural Decision Records for the orchestrator. Each file documents a singl
 ## For AI Agents
 
 ### Working In This Directory
-- ADR files are append-only records of past decisions. Do not edit existing ADRs to reverse a decision — write a new ADR that supersedes the old one and references it.
+- ADR files are immutable records of past decisions. Do not edit an existing ADR to reverse a decision — write a new ADR that supersedes the old one and references it by number.
 - Filename pattern: `NNNN-kebab-case-title.md` where `NNNN` is a zero-padded sequence number one higher than the current maximum.
-- Each ADR should include: a title, the decision made, options considered (with rejection rationale), and consequences.
+- When a decision is superseded, add `Superseded by [NNNN](NNNN-new-adr.md)` to the old ADR's `## Status` section.
+
+### Canonical ADR Format
+
+```markdown
+# Title
+
+## Status
+Accepted  <!-- or: Superseded by [NNNN](NNNN-title.md) -->
+
+## Context
+What problem existed and what constraints shaped the decision.
+
+## Decision
+The specific choice made, stated as a completed fact ("The orchestrator uses…").
+
+## Considered Options
+- **Option A** — rejected: reason
+- **Option B** — rejected: reason
+
+## Consequences
+Trade-offs accepted as a result of this decision — what is now easier, harder, or required.
+```
 
 ### Common Patterns
 - Files are plain Markdown with no front matter.
 - Decisions are stated as completed facts ("The orchestrator uses…"), not proposals.
+- Only write an ADR when the decision is hard to reverse, surprising without context, and the result of a real trade-off. Skip ADRs for obvious or easily-changed choices.
 
 <!-- MANUAL: Any manually added notes below this line are preserved on regeneration -->

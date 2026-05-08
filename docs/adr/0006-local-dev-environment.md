@@ -1,8 +1,15 @@
 # Local dev: containerised stack with reverse proxy
 
+## Status
+Accepted
+
+## Context
+Projects require a local runtime environment. A shared reverse proxy is needed to route multiple local sites by hostname without port collision. Platform-specific constraints (WSL2, Apple Silicon, etc.) may affect which Docker configurations are valid.
+
+## Decision
 Projects run locally via Docker Compose behind a shared reverse proxy (e.g. Caddy or Traefik) routing by hostname.
 
-## Typical stack layout
+## Stack
 
 | Component | Location | Notes |
 |-----------|----------|-------|

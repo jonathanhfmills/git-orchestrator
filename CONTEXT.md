@@ -27,6 +27,7 @@ Standard tags for Daily Log line items and commit message types:
 - A **Work Item** appears in the **Backlog** when planned but not yet started
 - Each line item in a **Daily Log** carries a **Tag** that becomes the commit type
 - An **ADR** covers orchestrator-level decisions only; project-level decisions live in `src/<repo-name>/docs/adr/`
+- **ARCHITECTURE.md** is the living structural map; ADRs are the immutable log of why it got there
 - An **Issue** on the orchestrator's GitHub repo is the preferred AI-automation surface; the external issue tracker remains source of truth
 
 ## Example

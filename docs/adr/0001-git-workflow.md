@@ -1,8 +1,15 @@
 # Trunk-based workflow with submodule-per-project abstraction
 
-The orchestrator uses a single `main` branch with no feature branches. Each project lives as a git submodule under `src/<repo-name>` and owns its own internal branch strategy. This means the orchestrator's branching complexity is zero — submodules are the abstraction layer that would otherwise require branches.
+## Status
+Accepted
 
-## Considered options
+## Context
+The orchestrator manages multiple projects with independent deployment cycles and separate remotes. These projects must be independently versioned and cannot share a single monorepo history without losing isolation.
+
+## Decision
+The orchestrator uses a single `main` branch with no feature branches. Each project mounts as a git submodule under `src/<repo-name>` and owns its own internal branch strategy. Submodules are the abstraction layer that would otherwise require branches.
+
+## Considered Options
 
 - **Feature branches per task** — rejected: submodules already provide per-project isolation; adding branches inside the orchestrator creates redundant abstraction with no auditability benefit at this scale
 - **Monorepo with all project code inline** — rejected: projects have independent deployment cycles, separate remotes, and must be independently versioned
