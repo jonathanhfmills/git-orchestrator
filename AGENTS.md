@@ -42,18 +42,20 @@ AI agents working in this repo maintain living documentation inline as decisions
 **Cross-reference with code.** When behavior is stated, check whether the code agrees. If a contradiction is found, surface it: "Your code does X, but you just said Y — which is right?"
 
 **Update docs inline.**
-- Term resolved → add to `GLOSSARY.md` immediately. Format: [GLOSSARY-FORMAT.md](./GLOSSARY-FORMAT.md).
-- Relationship or ambiguity resolved → update `CONTEXT.md` immediately. Format: [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md).
-- Rejected framing or cross-cutting rule resolved → add to `LANGUAGE.md` immediately. Format: [LANGUAGE-FORMAT.md](./LANGUAGE-FORMAT.md).
+- Term resolved → add to `GLOSSARY.md` immediately. Format: alphabetical, one sentence per term, `_Avoid_` line for aliases.
+- Relationship or ambiguity resolved → update `CONTEXT.md` immediately. Format: Relationships (bold terms, cardinality), Example dialogue, Flagged ambiguities.
+- Rejected framing or cross-cutting rule resolved → add to `LANGUAGE.md` immediately. Format: Principles (imperatives), Rejected framings (why not + what instead).
 - Domain experts only — never couple to implementation details.
 
 **Create files lazily.** No `CONTEXT.md` → create when first relationship or ambiguity is resolved. No `GLOSSARY.md` → create when first term is resolved. No `LANGUAGE.md` → create when first rejected framing or cross-cutting principle emerges. No `docs/adr/` → create when first ADR is needed.
 
 **Migration.** If `CONTEXT.md` has a `Language` section, migrate all terms to `GLOSSARY.md` at the start of the session. Announce briefly ("Moving N terms from `CONTEXT.md` to `GLOSSARY.md`"), then proceed. Remove the `Language` section from `CONTEXT.md` after migrating.
 
-**Offer ADRs sparingly.** Only when all three are true: (1) hard to reverse, (2) surprising without context, (3) result of a real trade-off. Format: [ADR-FORMAT.md](./ADR-FORMAT.md).
+**Offer ADRs sparingly.** Only when all three are true: (1) hard to reverse, (2) surprising without context, (3) result of a real trade-off. Format: `docs/adr/NNNN-slug.md` — Status / Context / Decision / Considered Options / Consequences.
 
-**Offer ROADMAP.md when milestones emerge.** When multi-month milestones or outcomes not tracked in the issue tracker surface. Format: [ROADMAP-FORMAT.md](./ROADMAP-FORMAT.md).
+**Offer ROADMAP.md when milestones emerge.** When multi-month milestones or outcomes not tracked in the issue tracker surface. Format: Vision / Phases (Theme, Target month, milestones) / Current Focus.
+
+_Full format specs: holistic-ai skill._
 
 ## Dependencies
 
