@@ -55,7 +55,7 @@ AI agents working in this repo maintain living documentation inline as decisions
 
 **Offer ROADMAP.md when milestones emerge.** When multi-month milestones or outcomes not tracked in the issue tracker surface. Format: Vision / Phases (Theme, Target month, milestones) / Current Focus.
 
-_Detailed format specs: `GLOSSARY-FORMAT.md`, `CONTEXT-FORMAT.md`, `LANGUAGE-FORMAT.md`, `ADR-FORMAT.md`, `ROADMAP-FORMAT.md` — bundled with the holistic-ai skill._
+_Detailed format specs: [`docs/GLOSSARY-FORMAT.md`](./docs/GLOSSARY-FORMAT.md), [`docs/CONTEXT-FORMAT.md`](./docs/CONTEXT-FORMAT.md), [`docs/LANGUAGE-FORMAT.md`](./docs/LANGUAGE-FORMAT.md), [`docs/ADR-FORMAT.md`](./docs/ADR-FORMAT.md), [`docs/ROADMAP-FORMAT.md`](./docs/ROADMAP-FORMAT.md)._
 
 ## Dependencies
 

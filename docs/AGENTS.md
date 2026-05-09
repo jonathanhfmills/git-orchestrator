@@ -5,6 +5,15 @@
 ## Purpose
 Central planning directory for the orchestrator. Contains two concerns: architectural decision records (ADRs) that document hard-to-reverse decisions made at the orchestrator level, and daily work logs that record in-progress and completed work items per day. Neither project source code nor project-level ADRs belong here — those live inside the respective submodule.
 
+## Key Files
+| File | Description |
+|------|-------------|
+| `GLOSSARY-FORMAT.md` | Format spec for GLOSSARY.md entries |
+| `CONTEXT-FORMAT.md` | Format spec for CONTEXT.md structure |
+| `LANGUAGE-FORMAT.md` | Format spec for LANGUAGE.md rules |
+| `ADR-FORMAT.md` | Format spec and criteria for ADRs |
+| `ROADMAP-FORMAT.md` | Format spec for ROADMAP.md |
+
 ## Subdirectories
 | Directory | Purpose |
 |-----------|---------|
@@ -14,7 +23,8 @@ Central planning directory for the orchestrator. Contains two concerns: architec
 ## For AI Agents
 
 ### Working In This Directory
-- Do not create files directly in `docs/` — content goes into `adr/` or `tasks/` subdirectories.
+- Format spec files (`*-FORMAT.md`) live here — read-only reference, do not modify.
+- New ADRs go in `adr/`. New daily logs go in `tasks/`. Do not create other files directly in `docs/`.
 - ADRs cover **orchestrator-level** decisions only (git workflow, commit conventions, task tracking location). Project decisions belong in `src/<repo>/docs/adr/`.
 - Daily logs follow the filename pattern `YYYY-MM-DD.md`. Copy `tasks/YYYY-MM-DD.md` as the template for new days.
 
