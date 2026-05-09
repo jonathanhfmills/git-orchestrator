@@ -51,11 +51,11 @@ AI agents working in this repo maintain living documentation inline as decisions
 
 **Migration.** If `CONTEXT.md` has a `Language` section, migrate all terms to `GLOSSARY.md` at the start of the session. Announce briefly ("Moving N terms from `CONTEXT.md` to `GLOSSARY.md`"), then proceed. Remove the `Language` section from `CONTEXT.md` after migrating.
 
-**Offer ADRs sparingly.** Only when all three are true: (1) hard to reverse, (2) surprising without context, (3) result of a real trade-off. Format: `docs/adr/NNNN-slug.md` — Status / Context / Decision / Considered Options / Consequences.
+**Record ADRs for hard decisions.** ADRs are the immutable log that stops decisions being re-litigated. When a decision meets all three criteria — (1) hard to reverse, (2) surprising without context, (3) result of a real trade-off — write the ADR immediately, in the session where the decision was made. Don't defer. A future agent reading `docs/adr/` can cite the ADR to close the same debate in seconds. Format: `docs/adr/NNNN-slug.md` — Status / Context / Decision / Considered Options / Consequences. Never edit an existing ADR to reverse a decision — write a new one that supersedes it.
 
 **Offer ROADMAP.md when milestones emerge.** When multi-month milestones or outcomes not tracked in the issue tracker surface. Format: Vision / Phases (Theme, Target month, milestones) / Current Focus.
 
-_Detailed format specs: `GLOSSARY-FORMAT.md`, `CONTEXT-FORMAT.md`, `LANGUAGE-FORMAT.md`, `ADR-FORMAT.md`, `ROADMAP-FORMAT.md` — bundled with the holistic-ai skill._
+_Detailed format specs: `GLOSSARY-FORMAT.md`, `CONTEXT-FORMAT.md`, `LANGUAGE-FORMAT.md`, `ADR-FORMAT.md`, `ROADMAP-FORMAT.md` — bundled with the holistic-ai skill (`~/.claude/skills/holistic-ai/` once installed)._
 
 ## Dependencies
 
