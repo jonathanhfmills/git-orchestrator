@@ -11,6 +11,7 @@ A personal orchestrator repository that manages project submodules, tracks daily
 | `LANGUAGE.md` | Rejected framings, behavioral rules, and resolved ambiguities for AI agents |
 | `CONTEXT.md` | Relationships, examples, Tags reference, and HITL classification framework |
 | `CONTEXT-MAP.md` | High-level map of bounded contexts and their relationships |
+| `RULES.md` | Operational rules: AI agent file ownership, read permissions, debate execution order |
 
 ## Subdirectories
 | Directory | Purpose |

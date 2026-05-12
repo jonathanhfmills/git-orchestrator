@@ -13,6 +13,14 @@
 | Sub-submodule | inner repo, nested repo |
 | Issue (GitHub) | work item (reserved for external tracker), ticket, card |
 | HIC | H-OFF (old name) |
+| Logic Debater | Claude agent, code debater |
+| Feelings Debater | Gemini agent, narrative debater |
+| Maintainer | implementor, developer agent |
+| Observer | watcher, monitor |
+| Orchestrator (debate) | coordinator, moderator |
+| AGENTS.md | AI docs, agent instructions file |
+| CLAUDE.md (independent) | Claude symlink |
+| GEMINI.md (independent) | Gemini symlink, documentation file |
 
 ## Behavioral Rules
 

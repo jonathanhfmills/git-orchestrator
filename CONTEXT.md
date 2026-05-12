@@ -51,6 +51,39 @@ Commit for the completed items:
 feat: Add feature A
 ```
 
+## AI Agent File Relationships
+
+- **holistic-ai** generates **AGENTS.md** (first run only) → **Codex** reads and writes implementation notes to **AGENTS.md**
+- **holistic-ai** generates **CLAUDE.md** as a copy of **AGENTS.md** → refreshed on every holistic-ai re-run
+- **Gemini** generates **GEMINI.md** from **AGENTS.md** + all domain docs → documentation-grade prose, never overwritten by holistic-ai
+- **QWEN.md** synthesizes **GEMINI.md** + domain docs + **AGENTS.md** (Codex notes) → Traditional Chinese, read by Qwen (observer)
+- **Main Claude thread** orchestrates the debate; each debater reads only its designated file — no shared context between debaters
+
+### Debate Flow
+
+```
+holistic-ai (file prep) → [AGENTS.md | CLAUDE.md | GEMINI.md | QWEN.md]
+                                                 ↓
+                         /debate trigger (on demand)
+                                                 ↓
+            Claude (logic, reads CLAUDE.md) ──┐
+            Gemini (feelings, reads GEMINI.md) ┤ → parallel
+                                               ↓
+                         Qwen (observer, reads QWEN.md) → synthesizes
+                                               ↓
+                         Orchestrator (main Claude thread) → concludes
+```
+
+### Role → Provider Mapping
+
+| Role | Default provider | File | Replaceable by |
+|------|-----------------|------|---------------|
+| Logic Debater | Claude | CLAUDE.md | Local model (hardest) |
+| Feelings Debater | Gemini | GEMINI.md | Local model |
+| Maintainer | Codex | AGENTS.md | Local model |
+| Observer | Qwen | QWEN.md | Local model |
+| Orchestrator | Claude (main thread) | — | Hardest to replace |
+
 ## HITL Task Classification
 
 AI agents classify every task node into one of three types before acting:
